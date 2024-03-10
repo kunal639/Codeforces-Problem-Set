@@ -1,0 +1,31 @@
+// Solution Approach:
+
+// 1. Check for even weight: If the watermelon weight (w) is even, it cannot be split into two parts with even weights while maintaining an odd total weight.
+
+// 2. Special case: If w is equal to 2, it's impossible to achieve the desired split.
+
+// 3. Possible division: For any other odd w or even w greater than 2, it's possible to split the watermelon into two even parts (e.g., 4 kg can be split into 2 kg and 2 kg).
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int w; //Declaring a variable to store the weight of the watermelon.
+    cin >> w;  //Take the weight input
+    if(w>2) //Checking the case if the weight of the watermelon is not equal to 2 kg.
+    {
+        if(w%2==0)
+        {
+        cout << "YES" << endl;  // Possible to split
+        }
+        else
+        {
+        cout << "NO" << endl;  // Not possible to split
+        }
+    }
+    else
+    {
+        cout << "NO" << endl;  // Not possible to split as the weight was equal to 2 kg.
+    }
+    return 0;
+}
