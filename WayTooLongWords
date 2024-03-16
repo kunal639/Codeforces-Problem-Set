@@ -1,0 +1,39 @@
+Approach:
+
+// 1.Input: Read the number of words (n) from the first line of input.
+       Read each subsequent line containing a single word.
+// 2. Process each word:
+      // *Iterate through each word (word).
+      // *Check the length of the word using len(word).
+      // **If the length is less than or equal to 10, the word is not too long, so keep it as it is.
+      // **If the length is greater than 10:
+      // **Extract the first letter (first_letter = word[0]).
+      // **Extract the last letter (last_letter = word[-1]).
+      // **Calculate the number of middle characters (middle_length = len(word) - 2).
+      // **Create the abbreviation by combining these parts (abbreviation = f"{first_letter}{middle_length}{last_letter}" using string formatting).
+
+import java.util.*;
+public class WayTooLongWords
+{
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int tst = sc.nextInt();
+    for(int i=0;i<tst;i++)
+    {
+        String str = sc.next();
+        int length = str.length();
+        if(length>10)
+        {
+        char ch1 = str.charAt(0);
+        char ch2 = str.charAt(length-1);
+        int n = length-2;
+        System.out.println(""+ch1+n+ch2);
+        }
+        else
+        {
+            System.out.println(str);
+        }
+    }
+    sc.close();
+    }
+}
